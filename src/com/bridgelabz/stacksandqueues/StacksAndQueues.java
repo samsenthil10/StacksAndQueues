@@ -21,5 +21,17 @@ public class StacksAndQueues {
 		myQueue.enqueue(item3);
 		myQueue.printMyQueue();
 		System.out.println();
+		myQueue.dequeue();
+		myQueue.printMyQueue();
+		System.out.println();
+		myQueue.dequeue();
+		myQueue.printMyQueue();
+		System.out.println();
+		myQueue.dequeue();
+		myQueue.printMyQueue();
+		System.out.println();
+		myQueue.dequeue();
+		myQueue.printMyQueue();
+		System.out.println();
 	}
 }
