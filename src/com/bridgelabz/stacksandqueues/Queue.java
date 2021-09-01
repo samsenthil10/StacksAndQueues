@@ -4,7 +4,7 @@ public class Queue<K> {
 
 	LinkedList<K> linkedList = new LinkedList<>();
 
-	public void enqueue(Node<K> node) {
+	public void enqueue(NodeImpl<K> node) {
 
 		linkedList.append(node);
 	}

@@ -2,24 +2,24 @@ package com.bridgelabz.stacksandqueues;
 
 public class LinkedList<K> {
 
-	private Node<K> head;
-	private Node<K> tail;
+	private NodeImpl<K> head;
+	private NodeImpl<K> tail;
 
-	public Node<K> getHead() {
+	public NodeImpl<K> getHead() {
 		return head;
 	}
-	public void setHead(Node<K> head) {
+	public void setHead(NodeImpl<K> head) {
 		this.head = head;
 	}
-	public Node<K> getTail() {
+	public NodeImpl<K> getTail() {
 		return tail;
 	}
-	public void setTail(Node<K> tail) {
+	public void setTail(NodeImpl<K> tail) {
 		this.tail = tail;
 	}
 
 	public void printLinkedList() {
-		Node<K> temp = head;
+		NodeImpl<K> temp = head;
 		while(temp != null) {
 			if(temp.getNext()!= null) {
 				System.out.print(temp.getKey()+"->");
@@ -32,7 +32,7 @@ public class LinkedList<K> {
 		}
 	}
 
-	public void add(Node<K> node) {
+	public void add(NodeImpl<K> node) {
 
 		if(head == null) {
 			head = node;
@@ -45,7 +45,7 @@ public class LinkedList<K> {
 		}
 	}
 
-	public void append(Node<K> node) {
+	public void append(NodeImpl<K> node) {
 
 		if(head == null) {
 			head = node;
@@ -58,8 +58,8 @@ public class LinkedList<K> {
 		}
 	}
 
-	public void insertInBetween(Node<K> node, Node<K> previousNode, Node<K> nextNode) {
-		Node<K> temp = head;
+	public void insertInBetween(NodeImpl<K> node, NodeImpl<K> previousNode, NodeImpl<K> nextNode) {
+		NodeImpl<K> temp = head;
 		while(temp != null) {
 			if(temp == previousNode && temp.getNext() == nextNode) {
 				break;
@@ -67,7 +67,7 @@ public class LinkedList<K> {
 			temp = temp.getNext();
 		}
 		if (temp != null) {
-			Node<K> temp1 = temp.getNext();
+			NodeImpl<K> temp1 = temp.getNext();
 			temp.setNext(node);
 			node.setNext(temp1);
 		}
@@ -87,7 +87,7 @@ public class LinkedList<K> {
 		}
 		else {
 
-			Node<K> temp = head;
+			NodeImpl<K> temp = head;
 			head = temp.getNext();
 			temp = null;
 		}
@@ -103,7 +103,7 @@ public class LinkedList<K> {
 			head = tail = null;
 		}
 		else {
-			Node<K> temp = head;
+			NodeImpl<K> temp = head;
 			while(temp.getNext() != tail) {
 				temp=temp.getNext();
 			}
@@ -112,8 +112,8 @@ public class LinkedList<K> {
 		}
 	}
 
-	public Node<K> search(K key) {
-		Node<K> temp = head;
+	public NodeImpl<K> search(K key) {
+		NodeImpl<K> temp = head;
 		while(temp!=null) {
 			if(temp.getKey().equals(key)) {
 				break;
@@ -125,10 +125,10 @@ public class LinkedList<K> {
 
 	public void insertAfterKey(K searchKey, K newKey) {
 
-		Node<K> temp = new Node<>();
+		NodeImpl<K> temp = new NodeImpl<>();
 		temp.setKey(newKey);
-		Node<K> tempPrev = search(searchKey);
-		Node<K> tempNext = tempPrev.getNext();
+		NodeImpl<K> tempPrev = search(searchKey);
+		NodeImpl<K> tempNext = tempPrev.getNext();
 		tempPrev.setNext(temp);
 		temp.setNext(tempNext);
 	}
@@ -145,17 +145,17 @@ public class LinkedList<K> {
 				head = tail = null;
 			}
 			else {
-				Node<K> temp =head;
+				NodeImpl<K> temp =head;
 				head = temp.getNext();
 				temp = null;
 			}
 		}
 		else if(search(searchKey)!=null) {
-			Node<K> tempPrevious = head;
+			NodeImpl<K> tempPrevious = head;
 			while(!tempPrevious.getNext().getKey().equals(searchKey))
 				tempPrevious = tempPrevious.getNext();
-			Node<K> temp = search(searchKey);
-			Node<K> tempNext = temp.getNext();	
+			NodeImpl<K> temp = search(searchKey);
+			NodeImpl<K> tempNext = temp.getNext();	
 			temp = null;
 			tempPrevious.setNext(tempNext);
 		}
@@ -166,7 +166,7 @@ public class LinkedList<K> {
 	
 	public int sizeOfList() {
 		int counter=0;
-		Node<K> temp = head;
+		NodeImpl<K> temp = head;
 		while(temp!=null) {
 			counter++;
 			temp=temp.getNext();

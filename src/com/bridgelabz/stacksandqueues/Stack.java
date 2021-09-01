@@ -4,7 +4,7 @@ public class Stack<K> {
 	
 	LinkedList<K> linkedList = new LinkedList<>();
 	
-	public void push(Node<K> node) {
+	public void push(NodeImpl<K> node) {
 		
 		linkedList.add(node);
 	}
