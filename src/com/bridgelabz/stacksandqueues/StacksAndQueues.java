@@ -23,5 +23,7 @@ public class StacksAndQueues {
 		myStack.push(item3);
 		myStack.printMyStack();
 		System.out.println(myStack.peak());	
+		System.out.println();
+		myStack.peakAndPopTillEmpty();
 	}
 }
