@@ -78,6 +78,7 @@ public class LinkedList<K> {
 
 	public void deleteAtFirst() {
 		if(head == null) {
+			System.out.println("Empty!");
 			return;
 		}
 		else if(head == tail)
@@ -94,6 +95,7 @@ public class LinkedList<K> {
 
 	public void deleteAtLast() {
 		if(head == null) {
+			System.out.println("Empty!");
 			return;
 		}
 		else if(head == tail)
@@ -134,6 +136,7 @@ public class LinkedList<K> {
 	public void deleteNodeWithKey(K searchKey) {
 
 		if(head == null) {
+			System.out.println("Empty!");
 			return;
 		}
 		else if((head.getKey().equals(searchKey)))
