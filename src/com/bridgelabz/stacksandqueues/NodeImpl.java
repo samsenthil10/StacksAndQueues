@@ -1,20 +1,25 @@
 package com.bridgelabz.stacksandqueues;
 
-public class Node<K> {
+public class NodeImpl<K> implements INodeIF<K>{
 
 	private K key;
-	private Node<K> next;
+	private NodeImpl<K> next;
 
+
+	@Override
 	public K getKey() {
 		return key;
 	}
+	@Override
 	public void setKey(K key) {
 		this.key = key;
 	}
-	public Node<K> getNext() {
+	@Override
+	public NodeImpl<K> getNext() {
 		return next;
 	}
-	public void setNext(Node<K> next) {
+	@Override
+	public void setNext(NodeImpl<K> next) {
 		this.next = next;
 	}
 }
