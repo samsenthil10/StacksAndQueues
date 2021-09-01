@@ -12,4 +12,8 @@ public class Queue<K> {
 	public void printMyQueue() {
 		linkedList.printLinkedList();
 	}
+	
+	public void dequeue() {
+		linkedList.deleteAtFirst();
+	}
 }
