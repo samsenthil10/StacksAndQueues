@@ -16,4 +16,16 @@ public class Stack<K> {
 	public K peak() {
 		return linkedList.getHead().getKey();
 	}
+	
+	public void pop() {
+		linkedList.deleteAtFirst();
+	}
+	
+	public void peakAndPopTillEmpty() {
+		
+		while(linkedList.sizeOfList()!=0) {
+			System.out.println(peak());
+			pop();
+		}
+	}
 }
